@@ -11,7 +11,7 @@ jobs:
       - name: Github Releases To Discord
         uses: SethCohen/github-releases-to-discord@v1.19.0
         with:
-          webhook_url: ${{ secrets.DISCORD_RELEASE_WEBHOOK_URL }}
+          webhook_url: ${{ secrets.DISCORD }}
           color: "2105893"
           username: "Filament Slim ScrollBar Release"
           avatar_url: "https://avatars.githubusercontent.com/u/116525492?s=96&v=4"
