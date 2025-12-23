@@ -1,115 +1,33 @@
 {
   "git": {
-    "commitMessage": "chore(release): ${version}",
-    "requireCleanWorkingDir": false,
+    "commitMessage": "chore: release v${version}",
     "requireBranch": "1.x",
-    "requireUpstream": true,
-    "requireCommits": false,
-    "addUntrackedFiles": false,
-    "commit": true,
-    "tag": true,
-    "push": true,
+    "requireCleanWorkingDir": false,
     "tagName": "v${version}",
-    "tagAnnotation": "Release v${version}",
-    "tagMatch": "[0-9]*\\.[0-9]*\\.[0-9]*",
-    "pushRepo": "origin"
+    "push": true,
+    "commit": true,
+    "tag": true
   },
   "github": {
     "release": true,
-    "releaseName": "Release ${version}",
-    "releaseNotes": null,
-    "preRelease": false,
-    "draft": false,
-    "tokenRef": "GITHUB_TOKEN",
-    "assets": null,
-    "host": null,
-    "timeout": 0,
-    "proxy": null,
-    "skipChecks": false,
-    "web": false
+    "releaseName": "v${version}"
   },
   "npm": {
-    "publish": false,
-    "publishPath": ".",
-    "tag": "latest",
-    "otp": null,
-    "ignoreVersion": false,
-    "allowSameVersion": false,
-    "versionArgs": [],
-    "skipChecks": false,
-    "timeout": 10
+    "publish": false
   },
   "hooks": {
     "before:init": [],
-    "after:bump": [
-      "composer install",
-      "npm install"
-    ],
-    "after:release": []
+    "after:bump": [],
+    "after:release": "echo Successfully released ${name} v${version}."
   },
   "plugins": {
     "@release-it/conventional-changelog": {
       "preset": {
-        "name": "conventionalcommits",
-        "types": [
-          {
-            "type": "feat",
-            "section": "Features"
-          },
-          {
-            "type": "fix",
-            "section": "Bug Fixes"
-          },
-          {
-            "type": "perf",
-            "section": "Performance Improvements"
-          },
-          {
-            "type": "revert",
-            "section": "Reverts"
-          },
-          {
-            "type": "docs",
-            "section": "Documentation",
-            "hidden": false
-          },
-          {
-            "type": "style",
-            "section": "Styles",
-            "hidden": true
-          },
-          {
-            "type": "chore",
-            "section": "Miscellaneous Chores",
-            "hidden": true
-          },
-          {
-            "type": "refactor",
-            "section": "Code Refactoring",
-            "hidden": false
-          },
-          {
-            "type": "test",
-            "section": "Tests",
-            "hidden": true
-          },
-          {
-            "type": "build",
-            "section": "Build System",
-            "hidden": true
-          },
-          {
-            "type": "ci",
-            "section": "Continuous Integration",
-            "hidden": true
-          }
-        ]
+        "name": "angular"
       },
       "infile": "CHANGELOG.md",
       "header": "# Changelog",
-      "gitRawCommitsOpts": {
-        "path": "."
-      }
+      "ignoreRecommendedBump": false
     }
   }
 }
