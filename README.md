@@ -1,54 +1,75 @@
-# This is my package filament-slim-scrollbar
+# Filament Slim Scrollbar
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/akira/filament-slim-scrollbar.svg?style=flat-square)](https://packagist.org/packages/akira/filament-slim-scrollbar)
-[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/akira/filament-slim-scrollbar/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/akira/filament-slim-scrollbar/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/akira/filament-slim-scrollbar/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/akira/filament-slim-scrollbar/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
+[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/akira/filament-slim-scrollbar/tests.yml?branch=1.x&label=tests&style=flat-square)](https://github.com/akira/filament-slim-scrollbar/actions?query=workflow%3Atests+branch%3A1.x)
 [![Total Downloads](https://img.shields.io/packagist/dt/akira/filament-slim-scrollbar.svg?style=flat-square)](https://packagist.org/packages/akira/filament-slim-scrollbar)
 
+A lightweight Filament package that provides elegant, slim scrollbars for all Filament panels. Pure CSS implementation with automatic light/dark mode support and zero configuration required.
 
+## Features
 
-This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
+-  **Slim Design**: 4px width/height scrollbars
+-  **Dark Mode**: Automatic light/dark theme support
+-  **Zero Config**: Works out of the box
+-  **Performance**: Pure CSS, no JavaScript
+-  **Filament Native**: Integrates seamlessly with Filament's asset system
+-  **Customizable**: Easy to override with your own styles
+
+## Requirements
+
+- PHP 8.1, 8.2, 8.3, 8.4, or 8.5
+- Laravel 10.x, 11.x, or 12.x
+- Filament 3.x or 4.x
 
 ## Installation
 
-You can install the package via composer:
+Install the package via Composer:
 
 ```bash
 composer require akira/filament-slim-scrollbar
 ```
 
-You can publish and run the migrations with:
+That's it! The package automatically registers itself and applies slim scrollbars to all Filament panels.
 
-```bash
-php artisan vendor:publish --tag="filament-slim-scrollbar-migrations"
-php artisan migrate
+## Browser Support
+
+Full support in webkit-based browsers:
+- ✅ Chrome/Chromium
+- ✅ Safari
+- ✅ Edge (Chromium)
+- ✅ Opera
+- ✅ Brave
+- ⚠️ Firefox (uses default scrollbars - webkit styling not supported)
+
+## Customization
+
+The package works with zero configuration, but you can customize the scrollbar styles by overriding the CSS in your custom theme:
+
+```css
+/* resources/css/filament/theme.css */
+
+::-webkit-scrollbar {
+    width: 8px;  /* Change width */
+    height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #3b82f6;  /* Custom color */
+}
 ```
 
-You can publish the config file with:
+For more customization options, see the [full documentation](https://packages.akira-io.com/packages/filament-slim-scrollbar).
 
-```bash
-php artisan vendor:publish --tag="filament-slim-scrollbar-config"
-```
+## Documentation
 
-Optionally, you can publish the views using
+Complete documentation is available at [https://packages.akira-io.com/packages/filament-slim-scrollbar](https://packages.akira-io.com/packages/filament-slim-scrollbar)
 
-```bash
-php artisan vendor:publish --tag="filament-slim-scrollbar-views"
-```
-
-This is the contents of the published config file:
-
-```php
-return [
-];
-```
-
-## Usage
-
-```php
-$filamentSlimScrollbar = new Akira\FilamentSlimScrollbar();
-echo $filamentSlimScrollbar->echoPhrase('Hello, Akira!');
-```
+- [Installation Guide](docs/01-installation.md)
+- [How It Works](docs/02-how-it-works.md)
+- [Customization](docs/03-customization.md)
+- [Browser Support](docs/04-browser-support.md)
+- [Troubleshooting](docs/05-troubleshooting.md)
+- [Roadmap](docs/00-roadmap.md)
 
 ## Testing
 
@@ -66,7 +87,7 @@ Please see [CONTRIBUTING](.github/CONTRIBUTING.md) for details.
 
 ## Security Vulnerabilities
 
-Please review [our security policy](../../security/policy) on how to report security vulnerabilities.
+Please review [our security policy](.github/SECURITY.md) on how to report security vulnerabilities.
 
 ## Credits
 
