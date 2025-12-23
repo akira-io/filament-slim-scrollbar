@@ -1,0 +1,91 @@
+name: "Feature Request"
+description: "Suggest a new feature or improvement"
+title: "[Feature]: "
+labels: ["feature"]
+body:
+
+  - type: markdown
+    attributes:
+      value: "Thanks for taking the time to propose a new feature!"
+
+  - type: input
+    id: title
+    attributes:
+      label: Feature Title
+      description: Provide a short and clear title for this feature
+      placeholder: "Ex: Early Access License Flow"
+
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem to Solve
+      description: Explain **why** this feature should exist. What problem or limitation does it address?
+      placeholder: |
+        - What is missing?
+        - What limitation exists?
+        - Why is this needed?
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed Solution
+      description: Describe **what** should be implemented and how it should work.
+      placeholder: |
+        Describe the workflow, behaviour, and expected output.
+    validations:
+      required: true
+
+  - type: textarea
+    id: impact
+    attributes:
+      label: Impact / Benefits
+      description: Describe how this feature will improve the product, developer experience, or performance.
+      placeholder: |
+        - Improves API DX
+        - Enables new integrations
+        - Reduces complexity
+
+  - type: markdown
+    attributes:
+      value: |
+        <details>
+        <summary><strong>Features ›</strong></summary>
+
+        ### Related Features or Modules
+        List any existing features, modules, or components related to this request.
+
+        This helps maintainers understand the context.
+
+        - Module:
+        - Action:
+        - Endpoint:
+        - Dashboard Component:
+        - Package Version:
+
+        </details>
+
+  - type: textarea
+    id: references
+    attributes:
+      label: References / Inspiration (optional)
+      description: Links to screenshots, code snippets, other libraries, RFCs, or documentation.
+      placeholder: |
+        - Link 1
+        - Link 2
+        - Screenshot
+        - RFC
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      options:
+        - label: I have verified this feature does not already exist
+        - label: I described the problem clearly
+        - label: I explained the proposed solution
+        - label: I provided references if applicable

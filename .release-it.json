@@ -1,0 +1,115 @@
+{
+  "git": {
+    "commitMessage": "chore(release): ${version}",
+    "requireCleanWorkingDir": false,
+    "requireBranch": "main",
+    "requireUpstream": true,
+    "requireCommits": false,
+    "addUntrackedFiles": false,
+    "commit": true,
+    "tag": true,
+    "push": true,
+    "tagName": "v${version}",
+    "tagAnnotation": "Release v${version}",
+    "tagMatch": "[0-9]*\\.[0-9]*\\.[0-9]*",
+    "pushRepo": "origin"
+  },
+  "github": {
+    "release": true,
+    "releaseName": "Release ${version}",
+    "releaseNotes": null,
+    "preRelease": false,
+    "draft": false,
+    "tokenRef": "GITHUB_TOKEN",
+    "assets": null,
+    "host": null,
+    "timeout": 0,
+    "proxy": null,
+    "skipChecks": false,
+    "web": false
+  },
+  "npm": {
+    "publish": false,
+    "publishPath": ".",
+    "tag": "latest",
+    "otp": null,
+    "ignoreVersion": false,
+    "allowSameVersion": false,
+    "versionArgs": [],
+    "skipChecks": false,
+    "timeout": 10
+  },
+  "hooks": {
+    "before:init": [],
+    "after:bump": [
+      "composer install",
+      "npm install"
+    ],
+    "after:release": []
+  },
+  "plugins": {
+    "@release-it/conventional-changelog": {
+      "preset": {
+        "name": "conventionalcommits",
+        "types": [
+          {
+            "type": "feat",
+            "section": "Features"
+          },
+          {
+            "type": "fix",
+            "section": "Bug Fixes"
+          },
+          {
+            "type": "perf",
+            "section": "Performance Improvements"
+          },
+          {
+            "type": "revert",
+            "section": "Reverts"
+          },
+          {
+            "type": "docs",
+            "section": "Documentation",
+            "hidden": false
+          },
+          {
+            "type": "style",
+            "section": "Styles",
+            "hidden": true
+          },
+          {
+            "type": "chore",
+            "section": "Miscellaneous Chores",
+            "hidden": true
+          },
+          {
+            "type": "refactor",
+            "section": "Code Refactoring",
+            "hidden": false
+          },
+          {
+            "type": "test",
+            "section": "Tests",
+            "hidden": true
+          },
+          {
+            "type": "build",
+            "section": "Build System",
+            "hidden": true
+          },
+          {
+            "type": "ci",
+            "section": "Continuous Integration",
+            "hidden": true
+          }
+        ]
+      },
+      "infile": "CHANGELOG.md",
+      "header": "# Changelog",
+      "gitRawCommitsOpts": {
+        "path": "."
+      }
+    }
+  }
+}

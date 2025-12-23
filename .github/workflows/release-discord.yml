@@ -1,3 +1,5 @@
+name: Release to Discord
+
 on:
   release:
     types: [ published ]
@@ -13,9 +15,9 @@ jobs:
         with:
           webhook_url: ${{ secrets.DISCORD }}
           color: "2105893"
-          username: "Filament Slim ScrollBar Release"
+          username: "Akira Setup"
           avatar_url: "https://avatars.githubusercontent.com/u/116525492?s=96&v=4"
           content: "||@everyone||"
-          footer_title: "Filament Slim ScrollBar"
+          footer_title: "Akira Setup"
           footer_icon_url: "https://avatars.githubusercontent.com/u/116525492?s=96&v=4"
           footer_timestamp: true
