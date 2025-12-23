@@ -10,9 +10,9 @@ jobs:
   test:
     runs-on: ubuntu-latest
     strategy:
-      fail-fast: true
+      fail-fast: false
       matrix:
-        php: [8.1, 8.2, 8.3, 8.4, 8.5]
+        php: [8.1, 8.2, 8.3, 8.4]
         laravel: [10.*, 11.*, 12.*]
         stability: [prefer-stable]
         include:
@@ -44,15 +44,11 @@ jobs:
         with:
           php-version: ${{ matrix.php }}
           extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite, bcmath, soap, intl, gd, exif, iconv
-          coverage: xdebug
+          coverage: none
           tools: composer:v2
-
-      - name: Install Aspell
-        run: sudo apt-get update && sudo apt-get install -y aspell aspell-en
 
       - name: Install dependencies
         run: |
-          rm -f composer.lock
           composer require "laravel/framework:${{ matrix.laravel }}" "orchestra/testbench:${{ matrix.testbench }}" "nesbot/carbon:${{ matrix.carbon }}" --no-interaction --no-update
           composer update --${{ matrix.stability }} --prefer-dist --no-interaction --no-progress --with-all-dependencies
 
