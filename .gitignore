@@ -11,3 +11,5 @@ phpunit.xml
 phpstan.neon
 testbench.yaml
 vendor
+/.phpunit.cache/code-coverage/14f081e16823f17ff4170e37524d642b
+/.phpunit.cache/test-results
