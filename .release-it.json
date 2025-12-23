@@ -2,7 +2,7 @@
   "git": {
     "commitMessage": "chore(release): ${version}",
     "requireCleanWorkingDir": false,
-    "requireBranch": "main",
+    "requireBranch": "1.x",
     "requireUpstream": true,
     "requireCommits": false,
     "addUntrackedFiles": false,
