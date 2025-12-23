@@ -19,15 +19,12 @@ jobs:
           - laravel: 10.*
             testbench: ^8.0
             carbon: ^2.63
-            collision: ^7.9
           - laravel: 11.*
             testbench: ^9.0
             carbon: ^2.63
-            collision: ^8.0
           - laravel: 12.*
             testbench: ^10.0
             carbon: ^3.0
-            collision: ^8.0
         exclude:
           - php: 8.1
             laravel: 11.*
@@ -56,7 +53,7 @@ jobs:
       - name: Install dependencies
         run: |
           rm -f composer.lock
-          composer require "laravel/framework:${{ matrix.laravel }}" "orchestra/testbench:${{ matrix.testbench }}" "nesbot/carbon:${{ matrix.carbon }}" "nunomaduro/collision:${{ matrix.collision }}" --no-interaction --no-update
+          composer require "laravel/framework:${{ matrix.laravel }}" "orchestra/testbench:${{ matrix.testbench }}" "nesbot/carbon:${{ matrix.carbon }}" --no-interaction --no-update
           composer update --${{ matrix.stability }} --prefer-dist --no-interaction --no-progress --with-all-dependencies
 
       - name: Run tests (Pest)
