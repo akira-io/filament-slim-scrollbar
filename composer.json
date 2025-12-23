@@ -25,7 +25,6 @@
         "spatie/laravel-package-tools": "^1.15.0"
     },
     "require-dev": {
-        "akira/setup": "^1.3",
         "laravel/pint": "^1.0",
         "nunomaduro/collision": "^7.9 || ^8.0 || ^9.0",
         "nunomaduro/larastan": "^2.0.1 || ^3.0",
@@ -37,6 +36,9 @@
         "phpstan/phpstan-deprecation-rules": "^1.0 || ^2.0",
         "phpstan/phpstan-phpunit": "^1.0 || ^2.0",
         "spatie/laravel-ray": "^1.26"
+    },
+    "suggest": {
+        "akira/setup": "^1.3 - Development setup utilities (Laravel 12+ only)"
     },
     "autoload": {
         "psr-4": {
@@ -81,10 +83,7 @@
         "laravel": {
             "providers": [
                 "Akira\\FilamentSlimScrollbar\\FilamentSlimScrollbarServiceProvider"
-            ],
-            "aliases": {
-                "FilamentSlimScrollbar": "Akira\\FilamentSlimScrollbar\\Facades\\FilamentSlimScrollbar"
-            }
+            ]
         }
     },
     "minimum-stability": "dev",
